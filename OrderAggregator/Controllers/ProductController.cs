@@ -35,5 +35,7 @@ namespace OrderAggregator.Controllers
         {
             return Ok(await _productLogic.AddProductsAsync(products));
         }
+
+        // Ostatní metody pro get, update, delete atd.
     }
 }
