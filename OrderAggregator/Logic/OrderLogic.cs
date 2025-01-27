@@ -23,7 +23,7 @@ namespace OrderAggregator.Logic
         }
 
         /// <summary>
-        /// Adds orders.
+        /// Adds orders to DB and to aggregate queue. Invalid orders are skipped.
         /// </summary>
         /// <param name="orders">List of orders.</param>
         /// <returns>List of created orders.</returns>
