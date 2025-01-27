@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrderAggregator</name>
+    </assembly>
+    <members>
+        <member name="T:OrderAggregator.Controllers.OrderController">
+            <summary>
+            Controller for orders.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Controllers.OrderController.#ctor(OrderAggregator.Logic.Interfaces.IOrderLogic)">
+            <summary>
+            Consttructor
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Controllers.OrderController.AddOrders(System.Collections.Generic.ICollection{OrderAggregator.Model.AddOrder})">
+            <summary>
+            Adds orders to DB and to aggregate queue. Invalid orders are skipped.
+            </summary>
+            <param name="orders">List of orders.</param>
+            <returns>Created orders.</returns>
+        </member>
+        <member name="T:OrderAggregator.Controllers.ProductController">
+            <summary>
+            Controller for products.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Controllers.ProductController.#ctor(OrderAggregator.Logic.Interfaces.IProductLogic)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="productLogic"></param>
+        </member>
+        <member name="M:OrderAggregator.Controllers.ProductController.AddProducts(System.Collections.Generic.ICollection{OrderAggregator.Model.AddProduct})">
+            <summary>
+            Adds products. Invalid products are not added.
+            </summary>
+            <param name="products">Products to add.</param>
+            <returns>Added products.</returns>
+        </member>
+        <member name="M:OrderAggregator.DB.OrdersContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{OrderAggregator.DB.OrdersContext})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:OrderAggregator.Job.OrderAggregateJob">
+            <summary>
+            Job for sending aggregated orders.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.Interfaces.IOrderAggregatorForJob.GetOrderAggregate">
+            <summary>
+            Gets actual queue for testing purposes.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.Interfaces.IOrderAggregatorForJob.AddOrders(System.Collections.Generic.ICollection{OrderAggregator.Model.DB.Order})">
+            <summary>
+            Adds orders to memory for process by job.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.Interfaces.IOrderAggregatorForJob.SendOrders">
+            <summary>
+            Sends queued orders to log and clears memory.
+            </summary>
+        </member>
+        <member name="T:OrderAggregator.Logic.Interfaces.IOrderLogic">
+            <summary>
+            Orders interface
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.Interfaces.IOrderLogic.AddOrdersAsync(System.Collections.Generic.ICollection{OrderAggregator.Model.AddOrder})">
+            <summary>
+            Adds orders.
+            </summary>
+            <param name="orders">List of orders.</param>
+            <returns>List of created orders.</returns>
+        </member>
+        <member name="T:OrderAggregator.Logic.Interfaces.IProductLogic">
+            <summary>
+            Products interface.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.Interfaces.IProductLogic.AddProductsAsync(System.Collections.Generic.ICollection{OrderAggregator.Model.AddProduct})">
+            <summary>
+            Adds products. Invalid products are not added.
+            </summary>
+            <param name="products">Products to add.</param>
+            <returns>Added products.</returns>
+        </member>
+        <member name="T:OrderAggregator.Logic.OrderAggregatorForJob">
+            <summary>
+            Aggregator for job.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.OrderAggregatorForJob.GetOrderAggregate">
+            <summary>
+            Gets actual queue for testing purposes.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.OrderAggregatorForJob.AddOrders(System.Collections.Generic.ICollection{OrderAggregator.Model.DB.Order})">
+            <summary>
+            Adds orders to memory for process by job.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.OrderAggregatorForJob.SendOrders">
+            <summary>
+            Sends queued orders to log and clears memory.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.OrderLogic.AddOrdersAsync(System.Collections.Generic.ICollection{OrderAggregator.Model.AddOrder})">
+            <summary>
+            Adds orders.
+            </summary>
+            <param name="orders">List of orders.</param>
+            <returns>List of created orders.</returns>
+        </member>
+        <member name="T:OrderAggregator.Logic.ProductLogic">
+            <summary>
+            Products logic.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Logic.ProductLogic.AddProductsAsync(System.Collections.Generic.ICollection{OrderAggregator.Model.AddProduct})">
+            <summary>
+            Adds products. Invalid products are not added.
+            </summary>
+            <param name="products">Products to add.</param>
+            <returns>Added products.</returns>
+        </member>
+        <member name="M:OrderAggregator.Utilities.ProductCache.GetProductIdsAsync(Microsoft.Extensions.Caching.Memory.IMemoryCache,OrderAggregator.DB.OrdersContext)">
+            <summary>
+            Get productIds from cache. Loads from DB, if not present.
+            </summary>
+        </member>
+        <member name="M:OrderAggregator.Utilities.ProductCache.LoadProductIdsAsync(Microsoft.Extensions.Caching.Memory.IMemoryCache,OrderAggregator.DB.OrdersContext)">
+            <summary>
+            Loads products to cache and clears original, if present.
+            </summary>
+        </member>
+    </members>
+</doc>

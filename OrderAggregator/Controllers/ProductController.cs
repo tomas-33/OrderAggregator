@@ -5,12 +5,19 @@ using OrderAggregator.Model.DB;
 
 namespace OrderAggregator.Controllers
 {
+    /// <summary>
+    /// Controller for products.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
     {
         private readonly IProductLogic _productLogic;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="productLogic"></param>
         public ProductController(IProductLogic productLogic)
         {
             _productLogic = productLogic;
@@ -23,7 +30,6 @@ namespace OrderAggregator.Controllers
         /// <returns>Added products.</returns>
         [HttpPost]
         [ProducesResponseType(typeof(ICollection<Product>), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<ICollection<Product>>> AddProducts([FromBody] ICollection<AddProduct> products)
         {
