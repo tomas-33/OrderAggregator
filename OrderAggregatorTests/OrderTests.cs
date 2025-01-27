@@ -36,7 +36,7 @@ namespace OrderAggregatorTests
         }
 
         [SetUp]
-        public async void Setup()
+        public async Task Setup()
         {
             var orders = await _context.Orders.ToListAsync();
             _context.RemoveRange(orders);
