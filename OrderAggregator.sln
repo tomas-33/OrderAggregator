@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderAggregator", "OrderAggregator\OrderAggregator.csproj", "{3E7FF9D4-EC19-4F5D-88BA-D6C8547C3F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderAggregatorTests", "OrderAggregatorTests\OrderAggregatorTests.csproj", "{71EC55FA-1DB5-4FC6-B3DB-C4AA13C3B191}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E7FF9D4-EC19-4F5D-88BA-D6C8547C3F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E7FF9D4-EC19-4F5D-88BA-D6C8547C3F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E7FF9D4-EC19-4F5D-88BA-D6C8547C3F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E7FF9D4-EC19-4F5D-88BA-D6C8547C3F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71EC55FA-1DB5-4FC6-B3DB-C4AA13C3B191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71EC55FA-1DB5-4FC6-B3DB-C4AA13C3B191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71EC55FA-1DB5-4FC6-B3DB-C4AA13C3B191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71EC55FA-1DB5-4FC6-B3DB-C4AA13C3B191}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9A5C756-1FDE-42E5-8BFD-3737A09A829B}
+	EndGlobalSection
+EndGlobal
